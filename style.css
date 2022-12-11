@@ -1,12 +1,12 @@
-.input-group{
+/* .input-group{
     width: 150px;
     padding: 10px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-}
+} */
 
-input{
+/* input{
     margin: 5px 0;
 }
 
@@ -23,15 +23,15 @@ input{
 
 .progress span{
     margin-left: 10px;
-}
+} */
 
-.progress-bar{
+/* .progress-bar{ */
     /* width: 100px; */
-    height: 20px;
+    /* height: 20px; */
     /* border: 1px solid black */
-}
+/* } */
 
-.progress:nth-of-type(1) .progress-bar{
+/* .progress:nth-of-type(1) .progress-bar{
     background-color: lightcoral;
 }
 
@@ -52,9 +52,9 @@ li{
     list-style-type: none;
     font-size: 30px;
     line-height: 40px;
-}
+} */
 
-.resize{
+/* .resize{
     position: fixed;
     top: 10px;
     right: 10px;
@@ -72,9 +72,9 @@ li{
     width: 150px;
     height: 30px;
 
-}
+} */
 
-.big-block{
+/* .big-block{
     width: 200px;
     height: 2000px;
     background: linear-gradient(to top, lightgreen, lightcoral) ;
@@ -88,9 +88,9 @@ li{
     display: flex;
     justify-content: space-between;
     z-index: 2;
-}
+} */
 
-.box{
+/* .box{
     width: 150px;
     height: 150px;
     position: relative;
@@ -102,9 +102,9 @@ li{
 
 .box:nth-of-type(2){
     background-color: lightsalmon;
-}
+} */
 
-.box:nth-of-type(3){
+/* .box:nth-of-type(3){
     background-color: lightseagreen;
 }
 
@@ -133,4 +133,20 @@ li{
     display: none;
     cursor: pointer;
     z-index: 99;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.circle{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+
+   
 }
