@@ -137,9 +137,56 @@
 
 // Task1===========================================================
 
+
+
 $(function () { 
+  $('#task1').on('click', function () {
+    $("body").css({
+      background: `white`,
+    });
+    $(".task1").css({
+      display: "block",
+    });
+    $(".task2").css({
+      display: "none",
+    });
+    $(".task3").css({
+      display: "none",
+    });
+  })
+
+  $("#task2").on("click", function () {
+    $("body").css({
+      background: `black`,
+    });
+    $(".task1").css({
+      display: "none",
+    });
+    $(".task2").css({
+      display: "block",
+    });
+    $(".task3").css({
+      display: "none",
+    });
+  });
+
+  $("#task3").on("click", function () {
+    $("body").css({
+      background: `white`,
+    });
+    $(".task1").css({
+      display: "none",
+    });
+    $(".task2").css({
+      display: "none",
+    });
+    $(".task3").css({
+      display: "flex",
+    });
+  });
+
     let r, g, b, br1, br2, sX, sY, width, height;
-    $(".circle").on('click', function () {
+  $(".circle").on('click', function () {
         r = Math.round(Math.random() * 255);
         g = Math.round(Math.random() * 255);
         b = Math.round(Math.random() * 255);
@@ -168,4 +215,86 @@ $(function () {
         });
 
     });
+    
+// Task2++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  let interval = setInterval(() => {
+    r = Math.round(Math.random() * 255);
+    g = Math.round(Math.random() * 255);
+    b = Math.round(Math.random() * 255);
+    let border = Math.round(Math.random() * 255);
+    width = Math.random() * 100;
+    
+    $(".disco-ball").animate(
+      {
+        top: (Math.random() * 1000) / 2,
+        left: Math.random() * 1100,
+        width: `${width}px`,
+        height: `${width}px`,
+      },
+      1500,
+      "easeOutBack"
+    );
+    $(".disco-ball").css({
+      background: `rgb(${r},${g},${b})`,
+      border: `2px solid rgb(${b},${r},${g})`,
+      boxShadow: `0 0 10px 10px rgb(${g},${b},${r})`,
+      
+    });
+
+  }, 1000);
+  
+// Task3+++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  let position, color, box;
+
+  $(".box").on("click", function () {
+    position = $(this).position();
+    color = $(this).css("background-color");
+    box = $(this);
+    $(".modal-container").css({
+      backgroundColor: "rgba(46, 44, 44, 0.5)",
+      zIndex: 3,
+    });
+    $(".modal").css({
+      display: "block",
+      backgroundColor: color,
+      left: position.left,
+      top: position.top,
+    });
+    $(this).css("background-color", "white");
+    $(".modal").animate(
+      {
+        width: "400px",
+        height: "400px",
+        left: (window.innerWidth - 400) / 2,
+        top: (window.innerHeight - 400) / 2,
+      },
+      2000,
+      "easeOutQuart"
+    );
+  });
+
+    $(".modal").on("click", function () {
+      $(".modal").animate(
+        {
+          width: "150px",
+          height: "150px",
+          left: position.left,
+          top: position.top,
+        },
+        2000,
+        "easeOutQuart",
+        function () {
+          $(".modal").css("display", "none");
+          $(".modal-container").css({
+            backgroundColor: "rgba(255,255,255)",
+            zIndex: -3,
+          });
+          box.css("background-color", color);
+        }
+      );
+    });
+  
+    
 })
